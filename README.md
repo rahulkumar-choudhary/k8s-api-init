@@ -1,6 +1,6 @@
 # k8s-api-init
 
-A simple Go CLI tool that connects to a Kubernetes cluster using `client-go` and lists all Pods and Deployments from a specified namespace. (more on the tool comming soon..)
+A simple Go CLI tool that connects to a Kubernetes cluster using `client-go` and lists all Pods, Deployments and Services from a specified namespace. (more on the tool comming soon..)
 
 ## Usage
 
@@ -11,13 +11,14 @@ kubectl version
 go get k8s.io/client-go@v0.33.1
 go mod tidy
 go build
-./k8s-api-init --kubeconfig /path/to/kubeconfig --namespace kube-system
+./k8s-api-init --kubeconfig <path> --namespace <name> --resource <pods|deployments|services|all>
 ```
 
 ## Flags
 
 * `--kubeconfig`: Path to your kubeconfig file (default: `/Users/rahul/.kube/config`) 
 * `--namespace`: Kubernetes namespace (default: `default`)
+* `--resource`: Resource to list: pods, deployments, services, or all
 
 Note: provide full path to your kubeconfig. 
 
